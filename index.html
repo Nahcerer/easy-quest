@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ROT2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="main-title">Welcome!</h1> <!-- Додаємо id для заголовка -->
+    <p id="sub-title">J'adore la salade</p> <!-- Додаємо підпис -->
+    <p id="sub-title-2">Gpkiocvke</p> <!-- Виправлено закриття тегу на <p> -->
+
+    <div class="modal" id="modal">
+        <h2 id="modal-title">Enter password</h2>
+        <input type="text" id="password-input" placeholder="Your password" /> <!-- Змінили тип на text -->
+        <button class="confirm-button" id="confirm-button">Confirm</button>
+    </div>
+
+    <script>
+        // Ваш правильний пароль
+        const correctPassword = "Énigmatique"; // Змініть на ваше слово
+
+        // Отримуємо елементи з DOM
+        const modal = document.getElementById("modal");
+        const passwordInput = document.getElementById("password-input");
+        const modalTitle = document.getElementById("modal-title");
+        const mainTitle = document.getElementById("main-title"); // Отримуємо заголовок
+        const subTitle = document.getElementById("sub-title"); // Отримуємо підпис
+        const subTitle2 = document.getElementById("sub-title-2"); // Отримуємо ще один підпис
+
+        // Додаємо обробник події на кнопку
+        document.getElementById("confirm-button").addEventListener("click", function () {
+            // Перевіряємо, чи введений пароль правильний
+            if (passwordInput.value === correctPassword) {
+                mainTitle.textContent = "Congratulations"; // Змінюємо текст заголовка
+                subTitle.style.display = "none"; // Сховати перший підпис
+                subTitle2.style.display = "none"; // Сховати другий підпис
+                passwordInput.style.display = "none"; // Сховати поле введення пароля
+                this.style.display = "none"; // Сховати кнопку
+                modalTitle.style.display = "none"; // Сховати заголовок модального вікна
+            } else {
+                alert("Неправильний пароль. Спробуйте ще раз."); // Попередження при неправильному паролі
+            }
+        });
+    </script>
+</body>
+</html>

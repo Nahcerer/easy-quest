@@ -1,0 +1,91 @@
+﻿body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Колір фону сторінки */
+}
+
+.modal {
+    position: relative; /* Додаємо позицію для батьківського елемента */
+    background-color: #4CAF50; /* Колір фону вікна */
+    color: white; /* Колір тексту */
+    padding: 60px 20px 20px 20px; /* Збільшено верхній відступ */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Тінь для вікна */
+    text-align: center;
+}
+
+h2 {
+    position: absolute; /* Позиціонуємо заголовок */
+    top: 20px; /* Відступ зверху */
+    left: 20px; /* Відступ зліва */
+    margin: 0; /* Звільняємо відступи, якщо вони є */
+}
+
+input[type="text"] { /* Змінили тип на text */
+    padding: 10px;
+    margin-top: 40px; /* Додаємо відступ зверху, щоб текст не перекривався */
+    border: none;
+    border-radius: 5px;
+}
+
+.confirm-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f44336; /* Початковий колір кнопки */
+    color: white;
+    cursor: pointer;
+    position: relative; /* Позиціонуємо кнопку для псевдоелементів */
+    overflow: hidden; /* Сховаємо те, що виходить за межі кнопки */
+}
+
+    .confirm-button::before,
+    .confirm-button::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 33.33%; /* Кожна смужка займає одну третю ширини */
+        top: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .confirm-button::before {
+        background-color: #0055A4; /* Синій колір */
+        left: 0;
+        transform: translateX(-100%); /* Початкова позиція (зліва) */
+    }
+
+    .confirm-button::after {
+        background-color: #EF4135; /* Червоний колір */
+        right: 0;
+        transform: translateX(100%); /* Початкова позиція (праворуч) */
+    }
+
+    .confirm-button:hover::before {
+        transform: translateX(0); /* Зрушуємо синю смужку */
+    }
+
+    .confirm-button:hover::after {
+        transform: translateX(0); /* Зрушуємо червону смужку */
+    }
+
+    .confirm-button:hover {
+        background-color: white; /* Змінюємо колір кнопки на білий */
+    }
+
+button:hover {
+    background-color: #c62828; /* Колір кнопки при наведенні (необов'язково) */
+}
+
+#sub-title, #sub-title-2 {
+    font-size: 1rem; /* Встановлюємо розмір шрифту для звичайного тексту */
+    color: #333; /* Колір тексту */
+    margin: 5px 0; /* Відступи зверху і знизу */
+}
+
+
